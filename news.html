@@ -1,0 +1,102 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+
+<html>
+<head>
+	<title>Lovin Oven Frenchtown Menu</title>
+	<link rel="icon" href="http://www.lovinovenfrenchtown.com/favicon.gif" type="image/x-icon">	
+	<link type="text/css" rel="stylesheet" href="/siteWide.css" />
+	<script type="text/javascript">
+	
+	  var _gaq = _gaq || [];
+	  _gaq.push(['_setAccount', 'UA-21386133-1']);
+	  _gaq.push(['_trackPageview']);
+	
+	  (function() {
+		var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+		ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+		var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	  })();
+	
+	</script>
+</head>
+
+<body marginheight="0" marginwidth="0" topmargin="0" leftmargin="0">
+
+<div class="mainContainer">
+	
+	<!-- muffin also absolutely positioned -->
+	<img src="/images/muffin.png" class="muffin" alt="muffin!" />
+	<img src="/images/cupcake.png" class="cupcake" alt="cupcake	!" />
+		
+	<div class="rightCol">
+		<div class="cake">
+			<!-- cake image -->
+		</div>
+		<div class="hoursBox">
+			<!--#include virtual="/hours.html" -->
+		</div>
+		<img src="/images/holdingSquash.jpg" class="lowerRightImage" alt="lovinOven" />
+		
+		<script charset="utf-8" src="http://widgets.twimg.com/j/2/widget.js"></script>
+		<script>
+		new TWTR.Widget({
+		  version: 2,
+		  type: 'profile',
+		  rpp: 4,
+		  interval: 30000,
+		  width: 'auto',
+		  height: 300,
+		  theme: {
+			shell: {
+			  background: '#333333',
+			  color: '#ffffff'
+			},
+			tweets: {
+			  background: '#000000',
+			  color: '#ffffff',
+			  links: '#27c1f0'
+			}
+		  },
+		  features: {
+			scrollbar: false,
+			loop: false,
+			live: false,
+			behavior: 'all'
+		  }
+		}).render().setUser('LovinOvenFtown').start();
+		</script>		
+		
+	</div>
+	<div class="leftCol">
+
+		<!--#include virtual="/topNav.html" -->		
+
+		<div class="contentContainer">
+			<div class="menu_header margin20Sides">News &amp; Events</div>
+
+			<div class="content"><!--#include virtual="/edit/homepageCallout.html" --></div>
+
+
+		</div>
+		<br class="clear" />
+	
+	</div>
+	<!--#include virtual="/footer.html" -->
+</div>
+
+<script type="text/javascript" src="/js/jquery-1.4.4.min.js"></script>	
+<script type="text/javascript" src="/js/jquery.cookie.js"></script>
+<script type="text/javascript" src="/js/jquery.transit.min.js"></script>
+<script type="text/javascript" src="/js/2011.js"></script>
+
+<script type="text/javascript">
+	$(document).ready(function() {
+		lo.slideshow.setup();
+		lo.slideshow.testSetup();
+		lo.cakeMove();
+	});
+</script>
+
+	
+</body>
+</html>

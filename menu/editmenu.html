@@ -1,0 +1,82 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+
+<html>
+<head>
+	<title>Lovin Oven Frenchtown Menu</title>
+<link rel="stylesheet" type="text/css" href="/inc/lovin_styles.css" />
+<link rel="stylesheet" href="/inc/jwysiwyg/jquery.wysiwyg.css" type="text/css" />
+
+<style type="text/css">
+	.editInput {
+		display: none;
+		width: 90%;
+	}
+	.editItem:hover {
+		background: #ccc;
+		cursor: pointer;	
+	}
+	#wysiwyg {
+		width: 650px;
+		height: 200px;
+	}
+</style>
+
+</head>
+
+<body>
+
+<div style="background:#f9e8e6; border:1px solid black; width:700px; margin:20px auto;">
+	<a href="/"><img border="0" src="/images/sign.jpg" width="700" height="59" alt="Lovin Oven" title="Lovin Oven Milford"></a>
+	
+	<div class="topNav">
+		<a href="/">Home</a>
+		<a href="/menu.html">Menu</a>
+		<a href="/directions.html">Directions</a>
+		<a href="/messages/">Message Board</a>
+	</div>
+
+	<div style="padding:10px;">
+
+		<div class="menu_header">Lovin' Oven Edit Page</div>
+
+    	<textarea name="wysiwyg" id="wysiwyg">
+			<p><b>special lunch item 1</b> - scrambled eggs, black bean chili, avocado and cheese; topped with salsa and sour cream 9</p>
+			<p><b>breakfast burrito</b> - scrambled eggs, black bean chili, avocado and cheese; topped with salsa and sour cream 9</p>
+			<p><b>special lunch item 2</b> - scrambled eggs, black bean chili, avocado and cheese; topped with salsa and sour cream 9</p>
+		</textarea>
+		<input id="submit" type="submit" />
+
+	
+	</div>
+</div>
+
+<script type="text/javascript" src="/js/jquery-1.3.2.min.js" ></script>
+<script type="text/javascript" src="/js/jquery.jeditable.js" ></script>
+<script type="text/javascript" src="/inc/jwysiwyg/jquery.wysiwyg.js"></script>
+<script type="text/javascript">
+	
+	var editLovin = {
+		init : function() {
+			$('#wysiwyg').wysiwyg();
+			$('#submit').click(function() {
+				$.ajax({
+   					type: "POST",
+   					url: "/edit/breakfastSpecials.php",
+   					data: "data=" + $($("iframe").document(), "#wysiwyg" ).find("body").html(),
+   					success: function(){
+     					window.location='http://www.lovinovenfrenchtown.com/edit/breakfastSpecials.php';
+   					}
+ 				});
+			});
+		}
+	};
+	
+	$(document).ready(function() {
+		editLovin.init();
+	});
+
+</script>
+
+
+</body>
+</html>
